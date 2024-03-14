@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:text="Calculator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginRight="125dp"
+        android:text=""
+        android:textSize="50dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="30dp"
+        android:hint="Insert a number"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/result"
+        app:layout_constraintStart_toStartOf="@id/title" />
+
+    <EditText
+        android:id="@+id/input2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="numberDecimal"
+        android:textSize="30dp"
+        android:hint="Insert a number"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/input1"
+        app:layout_constraintStart_toStartOf="@id/input1" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:text="+"
+        android:onClick="calculateSum"
+        app:layout_constraintTop_toBottomOf="@id/input2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:layout_marginLeft="16dp"
+        android:text="-"
+        android:onClick="calculateSubtraction"
+        app:layout_constraintTop_toBottomOf="@id/input2"
+        app:layout_constraintStart_toEndOf="@id/plus"/>
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:layout_marginLeft="16dp"
+        android:text="*"
+        android:onClick="calculateMultiplication"
+        app:layout_constraintTop_toBottomOf="@id/input2"
+        app:layout_constraintStart_toEndOf="@id/minus" />
+
+    <Button
+        android:id="@+id/division"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:text="/"
+        android:onClick="calculateDivision"
+        app:layout_constraintTop_toBottomOf="@id/plus"
+        app:layout_constraintStart_toStartOf="parent"  />
+
+    <Button
+        android:id="@+id/modulo"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:layout_marginLeft="16dp"
+        android:text="%"
+        android:onClick="calculateModulo"
+        app:layout_constraintTop_toBottomOf="@id/plus"
+        app:layout_constraintStart_toEndOf="@id/division" />
+
+    <Button
+        android:id="@+id/power"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:textSize="30dp"
+        android:layout_marginLeft="16dp"
+        android:text="n*"
+        android:onClick="calculatePower"
+        app:layout_constraintTop_toBottomOf="@id/plus"
+        app:layout_constraintStart_toEndOf="@id/modulo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
